@@ -3,7 +3,6 @@ using namespace std;
 
 int main()
 {
-
     int speed, time, distance;
 
     time = 4, distance = 20;
