@@ -1,0 +1,3 @@
+/Users/mrk/Desktop/MathLuck/build/CMakeFiles/mathluck.dir
+/Users/mrk/Desktop/MathLuck/build/CMakeFiles/edit_cache.dir
+/Users/mrk/Desktop/MathLuck/build/CMakeFiles/rebuild_cache.dir

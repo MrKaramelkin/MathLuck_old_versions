@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/mrk/Desktop/MathLuck/build",
+  "command": "/usr/bin/c++  -I/Users/mrk/Desktop/MathLuck/include -g -std=gnu++14 -arch arm64 -o CMakeFiles/mathluck.dir/main.cpp.o -c /Users/mrk/Desktop/MathLuck/main.cpp",
+  "file": "/Users/mrk/Desktop/MathLuck/main.cpp",
+  "output": "CMakeFiles/mathluck.dir/main.cpp.o"
+}
+]
