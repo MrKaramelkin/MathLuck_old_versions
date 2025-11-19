@@ -1,86 +1,19 @@
 #include <iostream>
-#include <ctime>
 using namespace std;
-
-bool check_for_division(int a) // функция, которая возвращает false, если число простое, и true, если не простое (7 - f, 8 - t, 9 - t, ...)
-{
-    bool flag = false;
-
-    if(a%2 == 0)
-    {
-        for(int i = 2; i < (a/2); i++)
-        {
-            if((a/i)*i == a)
-            {
-                flag = true;
-                return flag;
-            }
-        }
-    }
-    else
-    {
-        for(int i = 2; i < ((a-1)/2); i++)
-        {
-            if((a/i)*i == a)
-            {
-                flag = true;
-                return flag;
-            }
-        }
-    }
-
-    return flag;
-}
-
-string words_end(int num) // функция, которая пишет окончания слов. Например: 2 километр(words_end(2)) = 2 километра
-{
-    if(num % 10 == 1 && num % 100 != 11) return "";
-    if(num % 100 != 12 && num % 100 != 13 && num % 100 != 14 &&
-      (num % 10 == 2 || num % 10 == 3 || num % 10 == 4)) return "а";
-    return "ов";
-}
 
 int main()
 {
-    srand(time(nullptr));
 
     int speed, time, distance;
 
-    for(int count = 0; count < 10;)
-    {
-        time = rand() % 20, distance = rand() % 36 + 4;
+    time = 4, distance = 20;
         
-        while(true)
-        {
-            if(time > 20)
-            {
-                time = 2;
-            }
 
-            if(!check_for_division(distance)) distance++;
+    cout << "\nСпортсмен пробежал " << distance << " километров за " << time << " часов. ";
+    cout << "Он все время бежал с одной и той же скоростью. Чему она равна?\nОтвет (в км/ч): ";
 
-            if(time <= 20 && time >= 2 && (distance == (distance / time) * time) && time != distance) break;
-            time++;
-        }
+    cin >> speed;
 
-        cout << "\nСпортсмен пробежал " << distance << " километр" << words_end(distance) << " за " << time << " час" << words_end(time) << ". ";
-        cout << "Он все время бежал с одной и той же скоростью. Чему она равна?\nОтвет (в км/ч): ";
-
-        cin >> speed;
-
-        if(speed == (distance / time)) {cout << "Верно!\n"; count++; continue;}
-        cout << "Неверно!\n";
-    }
-
-    cout << "\nПоздравляю! Вы успешно усвоили материал ''Нахождение скорости с целыми вводными данными''\n";
-
-    return 0;
+    if(speed == (distance / time)) cout << "Верно!\n";
+    else cout << "Неверно!\n";
 }
-
-// Гештальт для (0.0.2):
-// 1 - Перенести все функции в инклюды, а файлы в свои src/inc и заставить симейк лист работать с ними
-// 2 - Заменять первое слово на бегуна (1-15 км/ч), велосипед (15-50 км/ч), мотоцикл (50-100) и машину (100-400)
-// 3 - Добавь входное значение Класс, при вводе которого будет меняться диапазон скоростей
-//     (например для 5 это до ~20 км/ч, для 6 это до ~400, для 7 это тоже самое, но без ограничения по дробям (333.33 итд))
-// 4 - Научиться пользоваться гитом и отгружать версии автоматически
-// 5 - Перестать удалять Гештальты перед отгрузкой версий
